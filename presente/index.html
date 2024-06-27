@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>presente?</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="main-content">
+        <h1>eai gato aceita um presentin?</h1>
+        <img src="image\gataomiau.jpeg" class="gatao-imagem">
+        <button class="btn-sim" onclick="showCongratsPage()">tarrr</button>
+        <button class="btn-nao" onmouseover="moveButton(this)">aff não</button>
+    </div>
+
+    <div id="congrats-content">
+        <h1 style="font-size: 24px;">parabéns! você ganhou um chocolate e um passeio com a namorada</h1>
+        <img src="image\miaugatin.jpeg" class="gatin-imagem">
+
+        <a href="https://music.youtube.com/watch?v=izGwDsrQ1eQ" target="_blank" class="btn-youtube">botao!!</a>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(to right, #f9f9f9, #e6e6e6);
+        overflow: hidden;
+    }
+
+    #main-content {
+        text-align: center;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: relative;
+        width: 80%;
+        max-width: 350px;
+        margin: auto;
+        margin-top: 50px;
+        padding: 30px;
+    }
+
+    #congrats-content{
+        text-align: center;
+        background-color: rgb(255, 255, 255);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: relative;
+        display: none;
+        width: 80%;
+        max-width: 350px;
+        margin: auto;
+        margin-top: 50px;
+        padding: 30px;
+
+    }
+
+
+    h1 {
+        color: #333;
+    }
+
+
+    .gatao-imagem {
+        width: 300px;
+        height: auto;
+        margin: 20px 0;
+        border-radius: 10px;
+    }
+
+    .gatin-imagem{
+        width: 300px;
+        height: auto;
+        margin: 20px 0;
+        border-radius: 10px;
+    }
+    button {
+        padding: 10px 20px;
+        margin: 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .btn-sim {
+        background-color: #264d27;
+        color: white;
+    }
+
+    .btn-sim:hover {
+        background-color: #45a049;
+        transform: scale(1.1);
+    }
+
+    .btn-nao {
+        background-color: #f44336;
+        color: white;
+        position: relative;
+    }
+
+    .btn-nao:hover {
+        background-color: #77110f;
+        transform: scale(1.1);
+    }
+
+    .btn-youtube {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #000000;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .btn-youtube:hover {
+        background-color: #c0257a;
+        transform: scale(1.1);
+    }
+
+</style>
+
+<script>
+    function showCongratsPage() {
+        document.getElementById('main-content').style.display = 'none';
+        document.getElementById('congrats-content').style.display = 'block';
+    }
+
+    function moveButton(btn) {
+        const viewportWidth = document.documentElement.clientWidth - btn.offsetWidth;
+        const viewportHeight = document.documentElement.clientHeight - btn.offsetHeight;
+
+        const newLeft = Math.random() * viewportWidth;
+        const newTop = Math.random() * viewportHeight;
+
+        btn.style.left = `${newLeft}px`;
+        btn.style.top = `${newTop}px`;
+    }
+</script>
+
+</html>
